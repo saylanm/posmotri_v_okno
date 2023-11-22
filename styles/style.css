@@ -47,12 +47,6 @@ ol {
   list-style: none;
 }
 
-
-/* 1) Расположить блок .content посередине .page */
-.page {
-  
-}
-
 /* 2) Расположить элементы .content в строку, прижав к низу вертикальной оси */
 .content {
   display: flex;
@@ -249,6 +243,7 @@ input[type="submit"] {
   gap: 30px;
   flex-shrink: 0;
   cursor: pointer;
+  
 }
 
 /* 4) Стилизация текстового поля */
@@ -311,3 +306,46 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 .search-form__label-text {
   gap: 39px;
 }
+
+.button.search-form__submit-button {
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid white; /* Белая рамка толщиной 1px */
+  color: white; /* Белый текст */
+  padding: 8px 16px; /* Задаем отступы вокруг текста */
+  /* Дополнительные стили по вашему усмотрению */
+  margin-bottom: 36px;
+  color: #FFF;
+  text-align: center;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 40px;
+  
+}
+
+.button.search-form__submit-button {
+  margin-top: 20px; /* Пространство от кнопки до других элементов формы */
+  /* Ваш стиль для кнопки */
+}
+
+.fieldset.search-form__fieldset-title {
+  margin-top: 20px;
+}
+
+.button.more-button {
+  display: block; /* Делаем кнопку блочным элементом */
+  width: 100%; /* Растягиваем кнопку на всю доступную ширину */
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid rgb(255, 255, 255); /* Белая рамка толщиной 1px */
+  color: white; /* Белый текст */
+  padding: 8px 16px;
+  text-align: center;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
