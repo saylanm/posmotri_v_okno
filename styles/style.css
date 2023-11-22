@@ -23,6 +23,9 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -46,11 +49,7 @@ ol {
 
 
 /* 1) Расположить блок .content посередине .page */
-.page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /* 2) Расположить элементы .content в строку, прижав к низу вертикальной оси */
 .content {
