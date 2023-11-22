@@ -75,7 +75,8 @@ ol {
 
 /* 6) Установить вертикальный размер для .content__list и добавить скролл при переполнении */
 .content__list {
-  height: 300px; /* Размер по вашему выбору */
+  height: 300px;
+  /* Размер по вашему выбору */
   overflow-y: auto;
   color: #FFF;
 }
@@ -96,7 +97,8 @@ ol {
 /* 1) Задать размеры контейнеру .result__video-container и добавить отступ снизу */
 .result__video-container {
   max-width: 100%;
-  height: 400px; /* или другой размер по вашему выбору */
+  height: 400px;
+  /* или другой размер по вашему выбору */
   margin-bottom: 20px;
   position: relative;
   overflow: hidden;
@@ -131,7 +133,8 @@ ol {
 /* 6) Сделать так, чтобы .content__video-card-description-container занимал всё доступное пространство, не занятое картинкой */
 .content__video-card-description-container {
   flex: 1;
-  padding-left: 20px; /* или другой отступ по вашему выбору */
+  padding-left: 20px;
+  /* или другой отступ по вашему выбору */
 }
 
 /* 1) Оформить текст элементов .search-form__fieldset-title  время суток город*/
@@ -139,7 +142,7 @@ ol {
   font-weight: bold;
   font-size: 18px;
   margin: 5px 0;
-  
+
 }
 
 /* 2) Оформить элемент .title и вложенный в него .content__accent */
@@ -156,7 +159,7 @@ ol {
 }
 
 .content__accent {
-  color: #545050; /* Цвет по вашему выбору */
+  color: #545050;
 }
 
 /* 3) Убрать дефолтное подчёркивание и заменить цвет текста у ссылки .content__card-link */
@@ -169,19 +172,21 @@ ol {
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 100%; /* 30px */
+  line-height: 100%;
+  /* 30px */
   text-decoration: none;
 }
 
 .content__video-card-title {
   color: #FFF;
-font-family: Oswald;
-font-size: 30px;
-font-style: normal;
-font-weight: 700;
-line-height: 100%; /* 30px */
-text-transform: uppercase;
-  
+  font-family: Oswald;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  /* 30px */
+  text-transform: uppercase;
+
 }
 
 /* Описание */
@@ -191,7 +196,8 @@ text-transform: uppercase;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16.2px; /* 90% */
+  line-height: 16.2px;
+  /* 90% */
 }
 
 /* 4) Оформить текст .content__video-card-title */
@@ -203,7 +209,8 @@ text-transform: uppercase;
 
 /* 5) Присмотреться к высоте линии в .content__video-card-description */
 .content__video-card-description {
-  line-height: 1.5; /* Высота линии по вашему выбору */
+  line-height: 1.5;
+  /* Высота линии по вашему выбору */
 }
 
 .visually-hidden {
@@ -243,7 +250,7 @@ input[type="submit"] {
   gap: 30px;
   flex-shrink: 0;
   cursor: pointer;
-  
+
 }
 
 /* 4) Стилизация текстового поля */
@@ -288,17 +295,19 @@ input[type="submit"] {
   display: block;
   width: 10px;
   height: 10px;
-  background-color: #FFF; /* Цвет по вашему выбору */
+  background-color: #FFF;
+  /* Цвет по вашему выбору */
   border-radius: 1px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0; /* Изначально скрываем */
+  opacity: 0;
+  /* Изначально скрываем */
 }
 
 /* При включенном состоянии */
-input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+input[type="checkbox"]:checked+.search-form__pseudo-checkbox::after {
   opacity: 1;
 }
 
@@ -308,10 +317,14 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .button.search-form__submit-button {
-  background-color: transparent; /* Прозрачный фон */
-  border: 1px solid white; /* Белая рамка толщиной 1px */
-  color: white; /* Белый текст */
-  padding: 8px 16px; /* Задаем отступы вокруг текста */
+  background-color: transparent;
+  /* Прозрачный фон */
+  border: 1px solid white;
+  /* Белая рамка толщиной 1px */
+  color: white;
+  /* Белый текст */
+  padding: 8px 16px;
+  /* Задаем отступы вокруг текста */
   /* Дополнительные стили по вашему усмотрению */
   margin-bottom: 36px;
   color: #FFF;
@@ -322,11 +335,12 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   font-weight: 700;
   line-height: normal;
   margin-left: 40px;
-  
+
 }
 
 .button.search-form__submit-button {
-  margin-top: 20px; /* Пространство от кнопки до других элементов формы */
+  margin-top: 20px;
+  /* Пространство от кнопки до других элементов формы */
   /* Ваш стиль для кнопки */
 }
 
@@ -335,11 +349,16 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
 }
 
 .button.more-button {
-  display: block; /* Делаем кнопку блочным элементом */
-  width: 100%; /* Растягиваем кнопку на всю доступную ширину */
-  background-color: transparent; /* Прозрачный фон */
-  border: 1px solid rgb(255, 255, 255); /* Белая рамка толщиной 1px */
-  color: white; /* Белый текст */
+  display: block;
+  /* Делаем кнопку блочным элементом */
+  width: 100%;
+  /* Растягиваем кнопку на всю доступную ширину */
+  background-color: transparent;
+  /* Прозрачный фон */
+  border: 1px solid rgb(255, 255, 255);
+  /* Белая рамка толщиной 1px */
+  color: white;
+  /* Белый текст */
   padding: 8px 16px;
   text-align: center;
   font-family: Fira Sans Condensed;
@@ -348,4 +367,3 @@ input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   font-weight: 700;
   line-height: normal;
 }
-
