@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+}
+
 html {
   block-size: 100%;
 }
@@ -35,4 +42,269 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+
+/* 1) Расположить блок .content посередине .page */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 2) Расположить элементы .content в строку, прижав к низу вертикальной оси */
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+/* 3) Задать горизонтальные размеры .content и отступы между его элементами */
+.result,
+.content__details {
+  flex: 1;
+  margin: 0 20px;
+}
+
+/* 4) Расположить элементы .search-form в строку и пропорционально распределить между ними свободное пространство, прижать их к началу контейнера */
+.search-form {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.search-form__fieldset {
+  flex: 1;
+  margin-right: 15px;
+
+}
+
+/* 6) Установить вертикальный размер для .content__list и добавить скролл при переполнении */
+.content__list {
+  height: 300px; /* Размер по вашему выбору */
+  overflow-y: auto;
+  color: #FFF;
+}
+
+/* 7) Растянуть .content__details во всю доступную ширину и высоту контейнера и добавить отступы между заголовком и зоной с карточками */
+.content__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #FFF;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+
+/* 1) Задать размеры контейнеру .result__video-container и добавить отступ снизу */
+.result__video-container {
+  max-width: 100%;
+  height: 400px; /* или другой размер по вашему выбору */
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 2) Замостить видео в этот контейнер так, чтобы оно занимало всю ширину и высоту и не выходило за пределы */
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 3) Создать вертикальные отступы между элементами .content__list-item (у всех, кроме последнего) */
+.content__list-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+/* 4) Расположить элементы внутри контейнера .content__video-card в строку, прижав к началу контейнера по дополнительной оси */
+.content__video-card {
+  display: flex;
+  align-items: center;
+}
+
+/* 5) Задать размеры .content__video-card-thumbnail и замостить в них изображение */
+.content__video-card-thumbnail {
+  flex: 0 0 auto;
+  width: 100px; /* или другой размер по вашему выбору */
+  height: 100px; /* или другой размер по вашему выбору */
+  object-fit: cover;
+}
+
+/* 6) Сделать так, чтобы .content__video-card-description-container занимал всё доступное пространство, не занятое картинкой */
+.content__video-card-description-container {
+  flex: 1;
+  padding-left: 20px; /* или другой отступ по вашему выбору */
+}
+
+/* 1) Оформить текст элементов .search-form__fieldset-title  время суток город*/
+.search-form__fieldset-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 5px 0;
+  
+}
+
+/* 2) Оформить элемент .title и вложенный в него .content__accent */
+.title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050; /* Цвет по вашему выбору */
+}
+
+/* 3) Убрать дефолтное подчёркивание и заменить цвет текста у ссылки .content__card-link */
+.content__card-link {
+  text-decoration: underline;
+  color: #FFF;
+  text-transform: uppercase;
+  color: #FFF;
+  font-family: Oswald;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 30px */
+  text-decoration: none;
+}
+
+.content__video-card-title {
+  color: #FFF;
+font-family: Oswald;
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: 100%; /* 30px */
+text-transform: uppercase;
+  
+}
+
+.content__video-card-description {
+  text-transform: none;
+  color: #FFF;
+font-family: Fira Sans Condensed;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 16.2px; /* 90% */
+}
+
+/* 4) Оформить текст .content__video-card-title */
+.content__video-card-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+/* 5) Присмотреться к высоте линии в .content__video-card-description */
+.content__video-card-description {
+  line-height: 1.5; /* Высота линии по вашему выбору */
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* 1) Сброс border у fieldset */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 2) Расставить элементы внутри .search-form__label в линию */
+.search-form__label {
+  display: flex;
+  width: fit-content;
+
+}
+
+/* 3) Установить на кликабельные элементы cursor: pointer */
+button,
+input[type="checkbox"],
+input[type="submit"] {
+  cursor: pointer;
+  display: flex;
+  width: 194px;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* 4) Стилизация текстового поля */
+.search-form__textfield {
+  border: 1px solid #ccc;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 8px;
+  background-color: #fff;
+}
+
+/* 5) Выстраиваем чекбоксы в линию */
+.search-form__checkbox-list {
+  display: flex;
+}
+
+/* 6) Свойство appearance: none для текстового поля */
+.search-form__textfield {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* 7) Оформление псевдочекбокса */
+.search-form__pseudo-checkbox {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999;
+  border-radius: 2px;
+  position: relative;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* Пример включенного чекбокса */
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #FFF; /* Цвет по вашему выбору */
+  border-radius: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Изначально скрываем */
+}
+
+/* При включенном состоянии */
+input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+
+.search-form__label-text {
+  gap: 39px;
 }
