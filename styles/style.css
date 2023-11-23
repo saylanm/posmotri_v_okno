@@ -4,13 +4,6 @@
   box-sizing: border-box;
 }
 
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 30px;
-}
-
 html {
   block-size: 100%;
 }
@@ -20,7 +13,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
   display: flex;
@@ -47,61 +40,60 @@ ol {
   list-style: none;
 }
 
-/* 2) Расположить элементы .content в строку, прижав к низу вертикальной оси */
 .content {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: 711px 399px;
+  margin: auto;
+  min-width: 1140px;
+  min-height: 100vh;
+  align-items: end;
+  align-content: center;
+  column-gap: 30px;
 }
 
-/* 3) Задать горизонтальные размеры .content и отступы между его элементами */
-.result,
-.content__details {
-  flex: 1;
-  margin: 0 20px;
-}
-
-/* 4) Расположить элементы .search-form в строку и пропорционально распределить между ними свободное пространство, прижать их к началу контейнера */
 .search-form {
   display: flex;
-  justify-content: flex-start;
-}
-
-.search-form__fieldset {
-  flex: 1;
-  margin-right: 15px;
-
+  max-width: 711px;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 /* 6) Установить вертикальный размер для .content__list и добавить скролл при переполнении */
 .content__list {
-  height: 300px;
-  /* Размер по вашему выбору */
+  height: 298px;
+  width: 417px;
   overflow-y: auto;
   color: #FFF;
 }
 
 /* 7) Растянуть .content__details во всю доступную ширину и высоту контейнера и добавить отступы между заголовком и зоной с карточками */
 .content__details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: #FFF;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
   margin-bottom: 20px;
+  color: #FFF;
+  font-family: "Oswald", serif;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; 
+  text-transform: uppercase;
 }
 
 
-/* 1) Задать размеры контейнеру .result__video-container и добавить отступ снизу */
+.content__accent {
+  color: #545050;
+}
+
+
 .result__video-container {
-  max-width: 100%;
-  height: 400px;
-  /* или другой размер по вашему выбору */
+  block-size: 368px;
+  inline-size: 711px;
   margin-bottom: 20px;
   position: relative;
-  overflow: hidden;
 }
 
 /* 2) Замостить видео в этот контейнер так, чтобы оно занимало всю ширину и высоту и не выходило за пределы */
@@ -109,109 +101,80 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 /* 3) Создать вертикальные отступы между элементами .content__list-item (у всех, кроме последнего) */
 .content__list-item:not(:last-child) {
   margin-bottom: 20px;
+  padding: 2px;
 }
 
 /* 4) Расположить элементы внутри контейнера .content__video-card в строку, прижав к началу контейнера по дополнительной оси */
 .content__video-card {
   display: flex;
-  align-items: center;
+  align-content: flex-start;
 }
 
 /* 5) Картинки справа*/
 .content__video-card-thumbnail {
-  flex: 0 0 auto;
+  object-fit: cover;
+  object-position: center;
   width: 194px;
   height: 103px;
-  object-fit: cover;
 }
 
 /* 6) Сделать так, чтобы .content__video-card-description-container занимал всё доступное пространство, не занятое картинкой */
 .content__video-card-description-container {
-  flex: 1;
-  padding-left: 20px;
-  /* или другой отступ по вашему выбору */
+  width: 100%;
+}
+
+.result__video-container,
+.content__list {
+  position: relative;
 }
 
 /* 1) Оформить текст элементов .search-form__fieldset-title  время суток город*/
 .search-form__fieldset-title {
-  font-weight: bold;
+  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
-  margin: 5px 0;
-
-}
-
-/* 2) Оформить элемент .title и вложенный в него .content__accent */
-.title {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #FFF;
-  font-family: Oswald;
-  font-size: 75px;
   font-style: normal;
-  font-weight: 700;
-  line-height: 94%;
-  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 5px;
+
 }
 
-.content__accent {
-  color: #545050;
-}
 
-/* 3) Убрать дефолтное подчёркивание и заменить цвет текста у ссылки .content__card-link */
 .content__card-link {
-  text-decoration: underline;
-  color: #FFF;
-  text-transform: uppercase;
-  color: #FFF;
-  font-family: Oswald;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 100%;
-  /* 30px */
   text-decoration: none;
 }
 
+.content__card-link:active {
+  background: #545050;
+}
+
+
 .content__video-card-title {
   color: #FFF;
-  font-family: Oswald;
+  font-family: "Oswald", serif;
   font-size: 30px;
-  font-style: normal;
   font-weight: 700;
-  line-height: 100%;
-  /* 30px */
   text-transform: uppercase;
+  margin-bottom: 5px;
 
 }
 
 /* Описание */
 .content__video-card-description {
   color: #FFF;
-  font-family: Fira Sans Condensed;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
-  font-style: normal;
   font-weight: 400;
   line-height: 16.2px;
-  /* 90% */
+  text-transform: uppercase;
 }
 
-/* 4) Оформить текст .content__video-card-title */
-.content__video-card-title {
-  font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-
-/* 5) Присмотреться к высоте линии в .content__video-card-description */
-.content__video-card-description {
-  line-height: 1.5;
-  /* Высота линии по вашему выбору */
-}
 
 .visually-hidden {
   position: absolute;
@@ -223,146 +186,139 @@ ol {
   white-space: nowrap;
 }
 
-/* 1) Сброс border у fieldset */
-fieldset {
+.search-form__fieldset {
   border: none;
-  padding: 0;
-  margin: 0;
-}
-
-/* 2) Расставить элементы внутри .search-form__label в линию */
-.search-form__label {
-  display: flex;
-  width: fit-content;
-
-}
-
-/* 3) Установить на кликабельные элементы cursor: pointer */
-button,
-input[type="checkbox"],
-input[type="submit"] {
-  cursor: pointer;
-  display: flex;
-  width: 194px;
-  height: 34px;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-shrink: 0;
-  cursor: pointer;
-
+  align-self: center;
 }
 
 /* 4) Стилизация текстового поля */
 .search-form__textfield {
-  border: 1px solid #ccc;
-  color: #333;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  padding: 8px;
-  background-color: #fff;
-}
-
-/* 5) Выстраиваем чекбоксы в линию */
-.search-form__checkbox-list {
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
-}
-
-/* 6) Свойство appearance: none для текстового поля */
-.search-form__textfield {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  width: 225px;
+  height: 27px;
+  align-items: center;
+  color: #fff;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: rgb(0 0 0/ 0);
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-right: none;
+  border-left: none;
+  box-shadow: none;
+  padding: 0;
   appearance: none;
 }
 
-/* 7) Оформление псевдочекбокса */
-.search-form__pseudo-checkbox {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #999;
-  border-radius: 2px;
-  position: relative;
-  vertical-align: middle;
-  margin-right: 5px;
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
 }
 
-/* Пример включенного чекбокса */
-.search-form__pseudo-checkbox::after {
+
+input[type="checkbox"] + span {
+  display: inline-flex;
+  vertical-align: middle;
+  background-color: rgb(0 0 0 / 0);
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.button {
+  cursor: pointer;
+  color: #FFF;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  border: 1px solid #fff;
+  background-color: rgb(0 0 0 / 0);
+}
+
+.search-form__submit-button {
+  display: inline-flex;
+  align-self: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 194px;
+  height: 34px;
+}
+
+.more-button {
+  display: inline-flex;
+  align-self: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 399px;
+  height: 34px;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  display: flex;
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
   content: "";
   display: block;
-  width: 10px;
-  height: 10px;
-  background-color: #FFF;
-  /* Цвет по вашему выбору */
-  border-radius: 1px;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  opacity: 0;
-  /* Изначально скрываем */
+  z-index: -1;
+  border-radius: 0%;
+  align-items: center;
 }
 
-/* При включенном состоянии */
-input[type="checkbox"]:checked+.search-form__pseudo-checkbox::after {
-  opacity: 1;
+.search-form__checkbox:focus {
+  outline: none;
 }
 
-
-.search-form__label-text {
-  gap: 39px;
+.search-form__label:hover .search-form__label-text {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.button.search-form__submit-button {
-  background-color: transparent;
-  /* Прозрачный фон */
-  border: 1px solid white;
-  /* Белая рамка толщиной 1px */
-  color: white;
-  /* Белый текст */
-  padding: 8px 16px;
-  /* Задаем отступы вокруг текста */
-  /* Дополнительные стили по вашему усмотрению */
-  margin-bottom: 36px;
-  color: #FFF;
-  text-align: center;
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-left: 40px;
-
+.button:focus,
+.content__card-link:focus {
+  outline: none;
 }
 
-.button.search-form__submit-button {
-  margin-top: 20px;
-  /* Пространство от кнопки до других элементов формы */
-  /* Ваш стиль для кнопки */
+.button:active {
+  background-color: #545050;
 }
 
-.fieldset.search-form__fieldset-title {
-  margin-top: 20px;
+.button:hover,
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #fff;
 }
 
-.button.more-button {
+.button:focus-visible,
+.content__card-link:focus-visible {
+  outline: 1px solid #ffffff;
+  outline-offset: 1px;
+}
+
+.content__card-link {
   display: block;
-  /* Делаем кнопку блочным элементом */
-  width: 100%;
-  /* Растягиваем кнопку на всю доступную ширину */
-  background-color: transparent;
-  /* Прозрачный фон */
-  border: 1px solid rgb(255, 255, 255);
-  /* Белая рамка толщиной 1px */
-  color: white;
-  /* Белый текст */
-  padding: 8px 16px;
-  text-align: center;
-  font-family: Fira Sans Condensed;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
