@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  block-size: 100%;
-}
-
 .page {
   inline-size: 1200px;
   block-size: 100%;
@@ -58,15 +54,13 @@ ol {
   justify-content: space-between;
 }
 
-/* 6) Установить вертикальный размер для .content__list и добавить скролл при переполнении */
 .content__list {
   height: 298px;
-  width: 417px;
+  width: 100%;
   overflow-y: auto;
   color: #FFF;
 }
 
-/* 7) Растянуть .content__details во всю доступную ширину и высоту контейнера и добавить отступы между заголовком и зоной с карточками */
 .content__details {
   width: 100%;
   height: 100%;
@@ -83,11 +77,9 @@ ol {
   text-transform: uppercase;
 }
 
-
 .content__accent {
   color: #545050;
 }
-
 
 .result__video-container {
   block-size: 368px;
@@ -96,7 +88,6 @@ ol {
   position: relative;
 }
 
-/* 2) Замостить видео в этот контейнер так, чтобы оно занимало всю ширину и высоту и не выходило за пределы */
 .result__video {
   width: 100%;
   height: 100%;
@@ -104,19 +95,16 @@ ol {
   object-position: center;
 }
 
-/* 3) Создать вертикальные отступы между элементами .content__list-item (у всех, кроме последнего) */
 .content__list-item:not(:last-child) {
   margin-bottom: 20px;
   padding: 2px;
 }
 
-/* 4) Расположить элементы внутри контейнера .content__video-card в строку, прижав к началу контейнера по дополнительной оси */
 .content__video-card {
   display: flex;
   align-content: flex-start;
 }
 
-/* 5) Картинки справа*/
 .content__video-card-thumbnail {
   object-fit: cover;
   object-position: center;
@@ -124,7 +112,6 @@ ol {
   height: 103px;
 }
 
-/* 6) Сделать так, чтобы .content__video-card-description-container занимал всё доступное пространство, не занятое картинкой */
 .content__video-card-description-container {
   width: 100%;
 }
@@ -134,7 +121,6 @@ ol {
   position: relative;
 }
 
-/* 1) Оформить текст элементов .search-form__fieldset-title  время суток город*/
 .search-form__fieldset-title {
   color: #fff;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -145,7 +131,6 @@ ol {
 
 }
 
-
 .content__card-link {
   text-decoration: none;
 }
@@ -153,7 +138,6 @@ ol {
 .content__card-link:active {
   background: #545050;
 }
-
 
 .content__video-card-title {
   color: #FFF;
@@ -165,7 +149,6 @@ ol {
 
 }
 
-/* Описание */
 .content__video-card-description {
   color: #FFF;
   font-family: "Fira Sans Condensed", sans-serif;
@@ -174,7 +157,6 @@ ol {
   line-height: 16.2px;
   text-transform: uppercase;
 }
-
 
 .visually-hidden {
   position: absolute;
@@ -191,14 +173,13 @@ ol {
   align-self: center;
 }
 
-/* 4) Стилизация текстового поля */
 .search-form__textfield {
   display: flex;
   width: 225px;
   height: 27px;
   align-items: center;
   color: #fff;
-  font-family: "Fira Sans Condensed", sans-serif;
+  font-family: inherit;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -213,12 +194,10 @@ ol {
   appearance: none;
 }
 
-
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
 }
-
 
 input[type="checkbox"] + span {
   display: inline-flex;
@@ -264,7 +243,6 @@ input[type="checkbox"] + span {
 }
 
 .search-form__label:has(:focus-visible) {
-  display: flex;
   outline: 1px solid #fff;
   outline-offset: 1px;
 }
